@@ -3,12 +3,10 @@ import { db, app } from "../../../services/client";
 import "../../../services/client";
 import { collection, doc, getDoc, getDocs, query } from "firebase/firestore";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Nav from "@/pages/Nav";
+
 const types = () => {
   const router = useRouter();
   const cat = router.query.data;
-
   console.log("category", router.query.data, "typec", router.query.type);
   const [values, setValues] = useState(null);
   const [data, setData] = useState([]);
@@ -29,7 +27,6 @@ const types = () => {
   }, [router.query.types]);
   return (
     <>
-      <Nav />
       <div className="w-full h-screen flex justify-center items-center absolute top-[3rem] z-[-1]">
         <div className="lg:w-[900px] h-[500px] flex lg:flex-row flex-col justify-around items-center shadow-2xl">
           <div className="lg:w-[400px] w-[300px] flex overflow-x-scroll h-[400px] overflow-y-hidden  items-center rounded-lg">
